@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow: hidden;
+    
+}
+
+#sky {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-image: url(sky.jpg);
+    background-repeat: no-repeat;
+    z-index: -1;
+    /* top: 10vh; */
+    background-size: cover;
+    /* background-attachment: fixed; */
+    animation: bodyshake 6500ms linear infinite;
+    
+    height: 108vh;
+    top:-4vh;
+
+}
+
+#trees {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: -25vh;
+    background: url(trees.png);
+    background-repeat: no-repeat;
+    z-index: 2;
+    background-size: cover;
+    /* background-attachment: fixed; */ /* slightly complicated to use  */
+}
+#track {
+    position: absolute;
+    width: 200vw;
+    height: 35vh;
+    top: 65vh;
+    background: url(track.png);
+    background-repeat: repeat-x;
+    z-index: 3;
+    /* background-size: cover; */
+    /* background-attachment: fixed; */
+    animation: move 1100ms linear infinite;
+
+
+    height: 43vh;
+}
+
+#car {
+    position: absolute;
+    width: 25em;
+    height: 8em;
+    bottom: 33vh;
+    background-image: url(car_body.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 20;
+    left: 30vw;
+    animation: shake 1800ms linear infinite;
+
+    
+    bottom: 41vh;
+}
+
+.wheel img {
+    position: relative;
+    height: 5rem;
+    animation: rotate linear 200ms infinite;
+}
+.front-wheel img {
+    left: 17.7em;
+    top: 3.4em;
+}
+
+.rear-wheel img {
+    left: 3.5em;
+    top: -2em;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes move {
+    100% {
+        transform: translateX(-100vw);
+    }
+
+}
+
+@keyframes shake {
+    0%{
+        transform: translateY(-0.3em);
+    }
+    50%{
+        transform: translateY(0.3em);
+    }
+    100%{
+        transform: translateY(-0.3em);
+    }
+}
+
+@keyframes bodyshake {
+    0%{
+        transform: translateY(-4vh);
+    }
+    50%{
+        transform: translateY(4vh);
+    }
+    100%{
+        transform: translateY(-4vh);
+    }
+}
